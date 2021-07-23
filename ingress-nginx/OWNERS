@@ -5,3 +5,6 @@ approvers:
 
 reviewers:
 - ingress-nginx-helm-reviewers
+
+labels:
+- area/helm
