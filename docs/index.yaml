@@ -3,7 +3,7 @@ entries:
   strimzi-kafka-operator:
   - apiVersion: v2
     appVersion: 0.30.0
-    created: "2022-08-02T15:13:42.789565+03:00"
+    created: "2022-08-10T19:00:16.300973+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: b8b4ce5f1e49c4725bd54e8dca0d8edc11a389f36b72fa2c9e6d9c31fa9a9e6c
     home: https://strimzi.io/
@@ -31,7 +31,7 @@ entries:
     version: 0.30.0
   - apiVersion: v2
     appVersion: 0.29.0
-    created: "2022-08-02T15:13:42.785992+03:00"
+    created: "2022-08-10T19:00:16.296227+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: d5c8a5f547ca51422a489a75c839bb2ad2b0ca23a0095d0f096282a24074cd93
     home: https://strimzi.io/
@@ -60,7 +60,30 @@ entries:
   velero:
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-02T15:13:42.796339+03:00"
+    created: "2022-08-10T19:00:16.308602+03:00"
+    description: A Helm chart for velero
+    digest: 51c3d85caa4254d948885d642766289a5cedaf7f214f9e4bec5db0af02f01491
+    home: https://github.com/vmware-tanzu/velero
+    icon: https://cdn-images-1.medium.com/max/1600/1*-9mb3AKnKdcL_QD3CMnthQ.png
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: hsiaoairplane@gmail.com
+      name: jenting
+    - email: sseago@redhat.com
+      name: sseago
+    - email: jiangd@vmware.com
+      name: reasonerjt
+    - email: yinw@vmware.com
+      name: ywk253100
+    name: velero
+    sources:
+    - https://github.com/vmware-tanzu/velero
+    urls:
+    - https://mtp-devops.github.io/3d-party-helm/velero-2.31.0.tgz
+    version: 2.31.0
+  - apiVersion: v2
+    appVersion: 1.9.0
+    created: "2022-08-10T19:00:16.306118+03:00"
     description: A Helm chart for velero
     digest: cdf0961ecf5faa7ff2004ecd6c7691edf74eb63aee55b340fb01613d4e47f79a
     home: https://github.com/vmware-tanzu/velero
@@ -83,7 +106,7 @@ entries:
     version: 2.30.1
   - apiVersion: v2
     appVersion: 1.8.1
-    created: "2022-08-02T15:13:42.792077+03:00"
+    created: "2022-08-10T19:00:16.303457+03:00"
     description: A Helm chart for velero
     digest: 28ecca497958a799323f62738e536c4e6feb92f225d13f24b3676e1da0f81f7f
     home: https://github.com/vmware-tanzu/velero
@@ -104,4 +127,4 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/velero-2.30.0.tgz
     version: 2.30.0
-generated: "2022-08-02T15:13:42.779961+03:00"
+generated: "2022-08-10T19:00:16.291461+03:00"
