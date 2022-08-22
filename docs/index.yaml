@@ -3,7 +3,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2022-08-18T15:53:34.558317+03:00"
+    created: "2022-08-22T15:10:37.681446+03:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 31f7895305c41903a54b131642950e7d30a2e1a0d9fc049d8024b8cfa9577231
     home: https://github.com/kubernetes/autoscaler
@@ -18,10 +18,41 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/cluster-autoscaler-9.19.4.tgz
     version: 9.19.4
+  metrics-server:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Allow probes to be turned off completly (this is not advised unless you know what you're doing)."
+    apiVersion: v2
+    appVersion: 0.6.1
+    created: "2022-08-22T15:10:37.682645+03:00"
+    description: Metrics Server is a scalable, efficient source of container resource
+      metrics for Kubernetes built-in autoscaling pipelines.
+    digest: 81ceba86706cc2adc4828112d236b70a9eb31f7afbd0a21f0a4a4caf02f56606
+    home: https://github.com/kubernetes-sigs/metrics-server
+    icon: https://avatars.githubusercontent.com/u/36015203?s=400&v=4
+    keywords:
+    - kubernetes
+    - metrics-server
+    - metrics
+    maintainers:
+    - name: stevehipwell
+      url: https://github.com/stevehipwell
+    - name: krmichel
+      url: https://github.com/krmichel
+    - name: endrec
+      url: https://github.com/endrec
+    name: metrics-server
+    sources:
+    - https://github.com/kubernetes-sigs/metrics-server
+    type: application
+    urls:
+    - https://mtp-devops.github.io/3d-party-helm/metrics-server-3.8.2.tgz
+    version: 3.8.2
   strimzi-kafka-operator:
   - apiVersion: v2
     appVersion: 0.30.0
-    created: "2022-08-18T15:53:34.571872+03:00"
+    created: "2022-08-22T15:10:37.694467+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: b8b4ce5f1e49c4725bd54e8dca0d8edc11a389f36b72fa2c9e6d9c31fa9a9e6c
     home: https://strimzi.io/
@@ -49,7 +80,7 @@ entries:
     version: 0.30.0
   - apiVersion: v2
     appVersion: 0.29.0
-    created: "2022-08-18T15:53:34.566317+03:00"
+    created: "2022-08-22T15:10:37.688275+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: d5c8a5f547ca51422a489a75c839bb2ad2b0ca23a0095d0f096282a24074cd93
     home: https://strimzi.io/
@@ -78,7 +109,7 @@ entries:
   velero:
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-18T15:53:34.591392+03:00"
+    created: "2022-08-22T15:10:37.706647+03:00"
     description: A Helm chart for velero
     digest: b80b33ae9515a451fabb97d1ae5592c71e82b5284000b481bc13da8d7becd810
     home: https://github.com/vmware-tanzu/velero
@@ -101,7 +132,7 @@ entries:
     version: 2.31.1
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-18T15:53:34.589267+03:00"
+    created: "2022-08-22T15:10:37.703739+03:00"
     description: A Helm chart for velero
     digest: 51c3d85caa4254d948885d642766289a5cedaf7f214f9e4bec5db0af02f01491
     home: https://github.com/vmware-tanzu/velero
@@ -124,7 +155,7 @@ entries:
     version: 2.31.0
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-18T15:53:34.585377+03:00"
+    created: "2022-08-22T15:10:37.701596+03:00"
     description: A Helm chart for velero
     digest: 1a78d6e1fb532d7adb6f63891d88799181b92c1c4430dfc887baa91b6e626465
     home: https://github.com/vmware-tanzu/velero
@@ -147,7 +178,7 @@ entries:
     version: 2.30.2
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-18T15:53:34.580696+03:00"
+    created: "2022-08-22T15:10:37.699411+03:00"
     description: A Helm chart for velero
     digest: cdf0961ecf5faa7ff2004ecd6c7691edf74eb63aee55b340fb01613d4e47f79a
     home: https://github.com/vmware-tanzu/velero
@@ -170,7 +201,7 @@ entries:
     version: 2.30.1
   - apiVersion: v2
     appVersion: 1.8.1
-    created: "2022-08-18T15:53:34.575681+03:00"
+    created: "2022-08-22T15:10:37.696697+03:00"
     description: A Helm chart for velero
     digest: 28ecca497958a799323f62738e536c4e6feb92f225d13f24b3676e1da0f81f7f
     home: https://github.com/vmware-tanzu/velero
@@ -191,4 +222,4 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/velero-2.30.0.tgz
     version: 2.30.0
-generated: "2022-08-18T15:53:34.554025+03:00"
+generated: "2022-08-22T15:10:37.678898+03:00"
