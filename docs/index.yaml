@@ -3,7 +3,7 @@ entries:
   aws-node-termination-handler:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2022-08-24T19:01:17.081251+03:00"
+    created: "2022-08-29T16:44:49.008014+03:00"
     description: A Helm chart for the AWS Node Termination Handler.
     digest: f26ecde352cb4eb30c5de3d6dbe0318e7f416f6ccc3ebe46866a87f8c7ab9e99
     home: https://github.com/aws/eks-charts
@@ -33,7 +33,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2022-08-24T19:01:17.083405+03:00"
+    created: "2022-08-29T16:44:49.009921+03:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 31f7895305c41903a54b131642950e7d30a2e1a0d9fc049d8024b8cfa9577231
     home: https://github.com/kubernetes/autoscaler
@@ -55,7 +55,7 @@ entries:
           description: "Allow probes to be turned off completly (this is not advised unless you know what you're doing)."
     apiVersion: v2
     appVersion: 0.6.1
-    created: "2022-08-24T19:01:17.08496+03:00"
+    created: "2022-08-29T16:44:49.012424+03:00"
     description: Metrics Server is a scalable, efficient source of container resource
       metrics for Kubernetes built-in autoscaling pipelines.
     digest: 81ceba86706cc2adc4828112d236b70a9eb31f7afbd0a21f0a4a4caf02f56606
@@ -79,10 +79,33 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/metrics-server-3.8.2.tgz
     version: 3.8.2
+  netdata:
+  - apiVersion: v2
+    appVersion: v1.36.1
+    created: "2022-08-29T16:44:49.014843+03:00"
+    description: Real-time performance monitoring, done right!
+    digest: 2f80d93e954fb142ade196936413c40872c4b41cf16cc73c210525c411823d74
+    home: https://netdata.cloud/
+    icon: https://netdata.github.io/helmchart/logo.png
+    keywords:
+    - alerting
+    - metric
+    - monitoring
+    maintainers:
+    - email: cloud-sre@netdata.cloud
+      name: Netdata Cloud SRE team
+    name: netdata
+    sources:
+    - https://github.com/netdata/helmchart
+    - https://github.com/netdata/netdata
+    type: application
+    urls:
+    - https://mtp-devops.github.io/3d-party-helm/netdata-3.7.29.tgz
+    version: 3.7.29
   strimzi-kafka-operator:
   - apiVersion: v2
     appVersion: 0.30.0
-    created: "2022-08-24T19:01:17.096128+03:00"
+    created: "2022-08-29T16:44:49.022874+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: b8b4ce5f1e49c4725bd54e8dca0d8edc11a389f36b72fa2c9e6d9c31fa9a9e6c
     home: https://strimzi.io/
@@ -110,7 +133,7 @@ entries:
     version: 0.30.0
   - apiVersion: v2
     appVersion: 0.29.0
-    created: "2022-08-24T19:01:17.092356+03:00"
+    created: "2022-08-29T16:44:49.018678+03:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: d5c8a5f547ca51422a489a75c839bb2ad2b0ca23a0095d0f096282a24074cd93
     home: https://strimzi.io/
@@ -139,7 +162,7 @@ entries:
   velero:
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-24T19:01:17.108465+03:00"
+    created: "2022-08-29T16:44:49.03502+03:00"
     description: A Helm chart for velero
     digest: b80b33ae9515a451fabb97d1ae5592c71e82b5284000b481bc13da8d7becd810
     home: https://github.com/vmware-tanzu/velero
@@ -162,7 +185,7 @@ entries:
     version: 2.31.1
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-24T19:01:17.106492+03:00"
+    created: "2022-08-29T16:44:49.032031+03:00"
     description: A Helm chart for velero
     digest: 51c3d85caa4254d948885d642766289a5cedaf7f214f9e4bec5db0af02f01491
     home: https://github.com/vmware-tanzu/velero
@@ -185,7 +208,7 @@ entries:
     version: 2.31.0
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-24T19:01:17.104405+03:00"
+    created: "2022-08-29T16:44:49.029973+03:00"
     description: A Helm chart for velero
     digest: 1a78d6e1fb532d7adb6f63891d88799181b92c1c4430dfc887baa91b6e626465
     home: https://github.com/vmware-tanzu/velero
@@ -208,7 +231,7 @@ entries:
     version: 2.30.2
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2022-08-24T19:01:17.102368+03:00"
+    created: "2022-08-29T16:44:49.027091+03:00"
     description: A Helm chart for velero
     digest: cdf0961ecf5faa7ff2004ecd6c7691edf74eb63aee55b340fb01613d4e47f79a
     home: https://github.com/vmware-tanzu/velero
@@ -231,7 +254,7 @@ entries:
     version: 2.30.1
   - apiVersion: v2
     appVersion: 1.8.1
-    created: "2022-08-24T19:01:17.099073+03:00"
+    created: "2022-08-29T16:44:49.025207+03:00"
     description: A Helm chart for velero
     digest: 28ecca497958a799323f62738e536c4e6feb92f225d13f24b3676e1da0f81f7f
     home: https://github.com/vmware-tanzu/velero
@@ -252,4 +275,4 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/velero-2.30.0.tgz
     version: 2.30.0
-generated: "2022-08-24T19:01:17.079296+03:00"
+generated: "2022-08-29T16:44:49.00544+03:00"
