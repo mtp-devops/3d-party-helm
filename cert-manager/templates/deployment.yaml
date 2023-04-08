@@ -90,6 +90,9 @@ spec:
           - --leader-election-retry-period={{ .retryPeriod }}
           {{- end }}
           {{- end }}
+          {{- with .Values.acmesolver.image }}
+          - --acme-http01-solver-image={{- if .registry -}}{{ .registry }}/{{- end -}}{{ .repository }}{{- if (.digest) -}} @{{ .digest }}{{- else -}}:{{ default $.Chart.AppVersion .tag }} {{- end -}}
+          {{- end }}
           {{- with .Values.extraArgs }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
@@ -109,6 +112,15 @@ spec:
           {{- end }}
           {{- if .Values.maxConcurrentChallenges }}
           - --max-concurrent-challenges={{ .Values.maxConcurrentChallenges }}
+          {{- end }}
+          {{- if .Values.enableCertificateOwnerRef }}
+          - --enable-certificate-owner-ref=true
+          {{- end }}
+          {{- if .Values.dns01RecursiveNameserversOnly }}
+          - --dns01-recursive-nameservers-only=true
+          {{- end }}
+          {{- with .Values.dns01RecursiveNameservers }}
+          - --dns01-recursive-nameservers={{ . }}
           {{- end }}
           ports:
           - containerPort: 9402
