@@ -3,7 +3,7 @@ entries:
   aws-node-termination-handler:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2026-01-12T11:55:14.986718+02:00"
+    created: "2026-01-12T17:25:16.147189+02:00"
     description: A Helm chart for the AWS Node Termination Handler.
     digest: f26ecde352cb4eb30c5de3d6dbe0318e7f416f6ccc3ebe46866a87f8c7ab9e99
     home: https://github.com/aws/eks-charts
@@ -38,7 +38,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.12.1
-    created: "2026-01-12T11:55:15.007038+02:00"
+    created: "2026-01-12T17:25:16.169685+02:00"
     description: A Helm chart for cert-manager
     digest: d3778a92e907cb033621d42b7de0cb1c1de30c6777d74e34382e8bff7e3abfa6
     home: https://github.com/cert-manager/cert-manager
@@ -63,7 +63,7 @@ entries:
       artifacthub.io/prerelease: '{{IS_PRERELEASE}}'
     apiVersion: v1
     appVersion: v1.11.1
-    created: "2026-01-12T11:55:15.004705+02:00"
+    created: "2026-01-12T17:25:16.16662+02:00"
     description: A Helm chart for cert-manager
     digest: 698276b54f821d729dc140bd586a12de8f92bd70594299b76f9e0a7dd379887e
     home: https://github.com/cert-manager/cert-manager
@@ -86,7 +86,7 @@ entries:
     version: v1.11.1
   - apiVersion: v1
     appVersion: v1.11.0
-    created: "2026-01-12T11:55:15.001933+02:00"
+    created: "2026-01-12T17:25:16.164237+02:00"
     description: A Helm chart for cert-manager
     digest: 29eaff5d0b5fa07503ae1a9bec9d76b2b8746f5e92c1c26159aadb1e198f5e99
     home: https://github.com/cert-manager/cert-manager
@@ -109,7 +109,7 @@ entries:
     version: v1.11.0
   - apiVersion: v1
     appVersion: v1.10.2
-    created: "2026-01-12T11:55:14.999192+02:00"
+    created: "2026-01-12T17:25:16.160969+02:00"
     description: A Helm chart for cert-manager
     digest: 52590b6da88c39dbe11868efc95c710a5d9c7d843b3ac3f3c18e61e4b061d3b8
     home: https://github.com/cert-manager/cert-manager
@@ -137,7 +137,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.10.1
-    created: "2026-01-12T11:55:14.995999+02:00"
+    created: "2026-01-12T17:25:16.15777+02:00"
     description: A Helm chart for cert-manager
     digest: 472eeaee57454fdda73bbee20002b0baeb5ebfc3a0003ee44fe90ca529993477
     home: https://github.com/cert-manager/cert-manager
@@ -160,7 +160,7 @@ entries:
     version: v1.10.1
   - apiVersion: v1
     appVersion: v1.0.0
-    created: "2026-01-12T11:55:14.993458+02:00"
+    created: "2026-01-12T17:25:16.154893+02:00"
     description: A Helm chart for cert-manager
     digest: 204d7de7d7eb6255d29e9282e1747e0e18b04c8adc9ca2c879d66ab5de42ae08
     home: https://github.com/jetstack/cert-manager
@@ -182,7 +182,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2026-01-12T11:55:15.008209+02:00"
+    created: "2026-01-12T17:25:16.171453+02:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 31f7895305c41903a54b131642950e7d30a2e1a0d9fc049d8024b8cfa9577231
     home: https://github.com/kubernetes/autoscaler
@@ -200,7 +200,7 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 8.5.1
-    created: "2026-01-12T11:55:15.009504+02:00"
+    created: "2026-01-12T17:25:16.17317+02:00"
     description: Official Elastic helm chart for Elasticsearch
     digest: 96b4d9048e5a77ab906916c54b5d67af2e2747e4e4eab87ad2c94e53701caf90
     home: https://github.com/elastic/helm-charts
@@ -217,7 +217,7 @@ entries:
   filebeat:
   - apiVersion: v1
     appVersion: 8.5.1
-    created: "2026-01-12T11:55:15.01205+02:00"
+    created: "2026-01-12T17:25:16.1761+02:00"
     description: Official Elastic helm chart for Filebeat
     digest: 5357ead9527df29d0c415093b1df2d50846be057ba1e84aed7f956667be63712
     home: https://github.com/elastic/helm-charts
@@ -233,7 +233,7 @@ entries:
     version: 8.5.1
   - apiVersion: v1
     appVersion: 6.8.22
-    created: "2026-01-12T11:55:15.010608+02:00"
+    created: "2026-01-12T17:25:16.174546+02:00"
     description: Official Elastic helm chart for Filebeat
     digest: a1f3db0d0c579a332e14b2d2e272c7524176fb8945c222b1643bcfd65410707c
     home: https://github.com/elastic/helm-charts
@@ -254,7 +254,7 @@ entries:
           description: "Updated Fluent Bit OCI image to v2.2.0."
     apiVersion: v1
     appVersion: 2.2.0
-    created: "2026-01-12T11:55:15.013343+02:00"
+    created: "2026-01-12T17:25:16.177521+02:00"
     description: Fast and lightweight log processor and forwarder or Linux, OSX and
       BSD family operating systems.
     digest: 1cf6690908fe12b2ec35e1908d4331b991ce1cf20d235efa26fd83a0f279ecd0
@@ -289,7 +289,7 @@ entries:
       artifacthub.io/prerelease: "false"
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-01-12T11:55:15.015346+02:00"
+    created: "2026-01-12T17:25:16.1803+02:00"
     description: Ingress controller for Kubernetes using NGINX as a reverse proxy
       and load balancer
     digest: 180d114120ff0d48496c8fae5845f90db595a8a908145a33ee98d5a1640a3233
@@ -312,7 +312,7 @@ entries:
   kafka-exporter:
   - apiVersion: v1
     appVersion: 1.6.0
-    created: "2026-01-12T11:55:15.016117+02:00"
+    created: "2026-01-12T17:25:16.181479+02:00"
     description: A Helm chart for Kubernetes
     digest: c59795254652466497f5d54218687e13441d01e46d712fef8010097e541c1966
     home: https://github.com/abhishekjiitr/kafka-exporter-helm
@@ -326,7 +326,7 @@ entries:
   kibana:
   - apiVersion: v1
     appVersion: 8.5.1
-    created: "2026-01-12T11:55:15.017058+02:00"
+    created: "2026-01-12T17:25:16.182833+02:00"
     description: Official Elastic helm chart for Kibana
     digest: f082d5c3e804b69088c19ea4e79546bcee3931a9da27cacb2758fb3f28ff0964
     home: https://github.com/elastic/helm-charts
@@ -348,7 +348,7 @@ entries:
           url: https://github.com/prometheus-community/helm-charts
     apiVersion: v2
     appVersion: 2.9.2
-    created: "2026-01-12T11:55:15.018511+02:00"
+    created: "2026-01-12T17:25:16.184088+02:00"
     description: Install kube-state-metrics to generate and expose cluster-level metrics
     digest: cb3d61df75b3aa260d04b0aa4765f19bd6970fa7f648a618b21e17eb5d27ae5a
     home: https://github.com/kubernetes/kube-state-metrics/
@@ -374,7 +374,7 @@ entries:
   logstash:
   - apiVersion: v1
     appVersion: 8.5.1
-    created: "2026-01-12T11:55:15.01999+02:00"
+    created: "2026-01-12T17:25:16.185258+02:00"
     description: Official Elastic helm chart for Logstash
     digest: a9101f053ff94d1b3ba65cd94ed66f092c1c2e1337c87047fa362d06d420103c
     home: https://github.com/elastic/helm-charts
@@ -395,7 +395,7 @@ entries:
           description: "Allow probes to be turned off completly (this is not advised unless you know what you're doing)."
     apiVersion: v2
     appVersion: 0.6.1
-    created: "2026-01-12T11:55:15.021075+02:00"
+    created: "2026-01-12T17:25:16.187215+02:00"
     description: Metrics Server is a scalable, efficient source of container resource
       metrics for Kubernetes built-in autoscaling pipelines.
     digest: 81ceba86706cc2adc4828112d236b70a9eb31f7afbd0a21f0a4a4caf02f56606
@@ -422,7 +422,7 @@ entries:
   netdata:
   - apiVersion: v2
     appVersion: v1.36.1
-    created: "2026-01-12T11:55:15.022732+02:00"
+    created: "2026-01-12T17:25:16.189478+02:00"
     description: Real-time performance monitoring, done right!
     digest: 2f80d93e954fb142ade196936413c40872c4b41cf16cc73c210525c411823d74
     home: https://netdata.cloud/
@@ -445,7 +445,7 @@ entries:
   prometheus-adapter:
   - apiVersion: v1
     appVersion: v0.10.0
-    created: "2026-01-12T11:55:15.023709+02:00"
+    created: "2026-01-12T17:25:16.190468+02:00"
     description: A Helm chart for k8s prometheus adapter
     digest: bc1f729009ba7bcefb970e3f41654f619ba269dfbf39a05a3aecbbe4c1390c20
     home: https://github.com/kubernetes-sigs/prometheus-adapter
@@ -469,8 +469,33 @@ entries:
     version: 3.4.2
   strimzi-kafka-operator:
   - apiVersion: v2
+    appVersion: 0.49.1
+    created: "2026-01-12T17:25:16.208521+02:00"
+    description: 'Strimzi: Apache Kafka running on Kubernetes'
+    digest: f36ffbd4dd5c27e34f4c7445e9df5b905fd27ad34e7ff05826cb44d4d8da4e43
+    home: https://strimzi.io/
+    icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
+    keywords:
+    - kafka
+    - queue
+    - stream
+    - event
+    - messaging
+    - datastore
+    - topic
+    maintainers:
+    - email: cncf-strimzi-maintainers@lists.cncf.io
+      name: Strimzi Project Maintainers
+      url: https://github.com/strimzi/governance
+    name: strimzi-kafka-operator
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    urls:
+    - https://mtp-devops.github.io/3d-party-helm/strimzi-kafka-operator-0.49.1.tgz
+    version: 0.49.1
+  - apiVersion: v2
     appVersion: 0.39.0
-    created: "2026-01-12T11:55:15.034079+02:00"
+    created: "2026-01-12T17:25:16.203768+02:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: a0fab1443750719105fc3fba09862a7a325ca9a6241edfec1f45f29117786066
     home: https://strimzi.io/
@@ -501,7 +526,7 @@ entries:
     version: 0.39.0
   - apiVersion: v2
     appVersion: 0.32.0
-    created: "2026-01-12T11:55:15.031237+02:00"
+    created: "2026-01-12T17:25:16.199318+02:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 0975833ff3d2ff6d6fe5d57d9a8598d3b38b462cda05c0a360b63d7d86f48829
     home: https://strimzi.io/
@@ -529,7 +554,7 @@ entries:
     version: 0.32.0
   - apiVersion: v2
     appVersion: 0.30.0
-    created: "2026-01-12T11:55:15.028733+02:00"
+    created: "2026-01-12T17:25:16.196604+02:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: b8b4ce5f1e49c4725bd54e8dca0d8edc11a389f36b72fa2c9e6d9c31fa9a9e6c
     home: https://strimzi.io/
@@ -557,7 +582,7 @@ entries:
     version: 0.30.0
   - apiVersion: v2
     appVersion: 0.29.0
-    created: "2026-01-12T11:55:15.026386+02:00"
+    created: "2026-01-12T17:25:16.193432+02:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: d5c8a5f547ca51422a489a75c839bb2ad2b0ca23a0095d0f096282a24074cd93
     home: https://strimzi.io/
@@ -586,7 +611,7 @@ entries:
   thanos:
   - apiVersion: v1
     appVersion: 0.17.1
-    created: "2026-01-12T11:55:15.036313+02:00"
+    created: "2026-01-12T17:25:16.210998+02:00"
     description: Thanos is a set of components that can be composed into a highly
       available metric system with unlimited storage capacity, which can be added
       seamlessly on top of existing Prometheus deployments.
@@ -609,7 +634,7 @@ entries:
   velero:
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2026-01-12T11:55:15.069235+02:00"
+    created: "2026-01-12T17:25:16.270451+02:00"
     description: A Helm chart for velero
     digest: e529d6f19569bcdaac89586575d775d80597cb9e9aba074dee2841ecbcf7ca53
     home: https://github.com/vmware-tanzu/velero
@@ -632,7 +657,7 @@ entries:
     version: 3.1.0
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2026-01-12T11:55:15.067722+02:00"
+    created: "2026-01-12T17:25:16.268815+02:00"
     description: A Helm chart for velero
     digest: c16e3e77b9378d3b8a489e608061262c1822ec0b631fefd6a0981951442b182a
     home: https://github.com/vmware-tanzu/velero
@@ -655,7 +680,7 @@ entries:
     version: 3.0.0
   - apiVersion: v2
     appVersion: 1.9.4
-    created: "2026-01-12T11:55:15.065792+02:00"
+    created: "2026-01-12T17:25:16.266785+02:00"
     description: A Helm chart for velero
     digest: b5e221373f9668348f980847eab86ca3ff78c3c1015cd175580d4d3491061956
     home: https://github.com/vmware-tanzu/velero
@@ -678,7 +703,7 @@ entries:
     version: 2.32.6
   - apiVersion: v2
     appVersion: 1.9.4
-    created: "2026-01-12T11:55:15.06414+02:00"
+    created: "2026-01-12T17:25:16.264647+02:00"
     description: A Helm chart for velero
     digest: 8c3b757adeb1c0b6189e815cbdf32e9af5dd70ed2dc321320a1cfa6f15b026f1
     home: https://github.com/vmware-tanzu/velero
@@ -701,7 +726,7 @@ entries:
     version: 2.32.5
   - apiVersion: v2
     appVersion: 1.9.4
-    created: "2026-01-12T11:55:15.062768+02:00"
+    created: "2026-01-12T17:25:16.261769+02:00"
     description: A Helm chart for velero
     digest: c7027e24381bd86e6b9bb3512757e9fc2204f3816bf97f051c7584efabbc3487
     home: https://github.com/vmware-tanzu/velero
@@ -724,7 +749,7 @@ entries:
     version: 2.32.4
   - apiVersion: v2
     appVersion: 1.9.3
-    created: "2026-01-12T11:55:15.06135+02:00"
+    created: "2026-01-12T17:25:16.259747+02:00"
     description: A Helm chart for velero
     digest: 3cedfed7b6c55909bf92d761563cec5452fb073c026278ff74da46d28080b96d
     home: https://github.com/vmware-tanzu/velero
@@ -747,7 +772,7 @@ entries:
     version: 2.32.3
   - apiVersion: v2
     appVersion: 1.9.3
-    created: "2026-01-12T11:55:15.059673+02:00"
+    created: "2026-01-12T17:25:16.255091+02:00"
     description: A Helm chart for velero
     digest: 3205599247beeaa67220ac5f6388eec7c37680b9c53b73c3850aae747adfda08
     home: https://github.com/vmware-tanzu/velero
@@ -770,7 +795,7 @@ entries:
     version: 2.32.2
   - apiVersion: v2
     appVersion: 1.9.2
-    created: "2026-01-12T11:55:15.0582+02:00"
+    created: "2026-01-12T17:25:16.252226+02:00"
     description: A Helm chart for velero
     digest: e57287291fa33998ec2ec8a22e4d638da532a39eb7e31386ed75f52ab939d822
     home: https://github.com/vmware-tanzu/velero
@@ -793,7 +818,7 @@ entries:
     version: 2.32.1
   - apiVersion: v2
     appVersion: 1.9.2
-    created: "2026-01-12T11:55:15.05649+02:00"
+    created: "2026-01-12T17:25:16.248663+02:00"
     description: A Helm chart for velero
     digest: 9686e1304e24474f9bd706a677ab4cdeed92c3d0e9b7ce07c998afdedb59c9cb
     home: https://github.com/vmware-tanzu/velero
@@ -816,7 +841,7 @@ entries:
     version: 2.32.0
   - apiVersion: v2
     appVersion: 1.9.2
-    created: "2026-01-12T11:55:15.055127+02:00"
+    created: "2026-01-12T17:25:16.245331+02:00"
     description: A Helm chart for velero
     digest: 75b6413937068bb3f7711f677a8152084faeb1402d2de72a13766df03a108dac
     home: https://github.com/vmware-tanzu/velero
@@ -839,7 +864,7 @@ entries:
     version: 2.31.9
   - apiVersion: v2
     appVersion: 1.9.2
-    created: "2026-01-12T11:55:15.053553+02:00"
+    created: "2026-01-12T17:25:16.243058+02:00"
     description: A Helm chart for velero
     digest: 876858e4391816b2c6860681b52bff42c97cc5acee9e8ddf2594496e42ad49cc
     home: https://github.com/vmware-tanzu/velero
@@ -862,7 +887,7 @@ entries:
     version: 2.31.8
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-01-12T11:55:15.05211+02:00"
+    created: "2026-01-12T17:25:16.239641+02:00"
     description: A Helm chart for velero
     digest: 862575369bfdc77a9934b6173b5a954f850903062fcd00f0c63a75ff560012e7
     home: https://github.com/vmware-tanzu/velero
@@ -885,7 +910,7 @@ entries:
     version: 2.31.7
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-01-12T11:55:15.050624+02:00"
+    created: "2026-01-12T17:25:16.236752+02:00"
     description: A Helm chart for velero
     digest: c5651e128b008319d8eb6f887e05602ac94921a00b2ee2b28819a8d60ea972d1
     home: https://github.com/vmware-tanzu/velero
@@ -908,7 +933,7 @@ entries:
     version: 2.31.6
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-01-12T11:55:15.04882+02:00"
+    created: "2026-01-12T17:25:16.233701+02:00"
     description: A Helm chart for velero
     digest: 80fa04db8a5208ac874799e7605e63d74430321eeb4212e5629a6d07daebc627
     home: https://github.com/vmware-tanzu/velero
@@ -931,7 +956,7 @@ entries:
     version: 2.31.5
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-01-12T11:55:15.047298+02:00"
+    created: "2026-01-12T17:25:16.230716+02:00"
     description: A Helm chart for velero
     digest: 27ecb1b05a061c1c5835751416789765de87ab97a3b6815bfb3defddeaaa8de4
     home: https://github.com/vmware-tanzu/velero
@@ -954,7 +979,7 @@ entries:
     version: 2.31.4
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-01-12T11:55:15.045965+02:00"
+    created: "2026-01-12T17:25:16.228553+02:00"
     description: A Helm chart for velero
     digest: 1ba8d811f821b142e311fd9e0157212b4ad61cd530c9a4fd921796809b652aac
     home: https://github.com/vmware-tanzu/velero
@@ -977,7 +1002,7 @@ entries:
     version: 2.31.3
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2026-01-12T11:55:15.044705+02:00"
+    created: "2026-01-12T17:25:16.22615+02:00"
     description: A Helm chart for velero
     digest: ba61f9da0af9522ac17410d35e729490671cf32542c0cf7d37d4496dae860579
     home: https://github.com/vmware-tanzu/velero
@@ -1000,7 +1025,7 @@ entries:
     version: 2.31.2
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2026-01-12T11:55:15.043391+02:00"
+    created: "2026-01-12T17:25:16.223474+02:00"
     description: A Helm chart for velero
     digest: b80b33ae9515a451fabb97d1ae5592c71e82b5284000b481bc13da8d7becd810
     home: https://github.com/vmware-tanzu/velero
@@ -1023,7 +1048,7 @@ entries:
     version: 2.31.1
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2026-01-12T11:55:15.042072+02:00"
+    created: "2026-01-12T17:25:16.22065+02:00"
     description: A Helm chart for velero
     digest: 51c3d85caa4254d948885d642766289a5cedaf7f214f9e4bec5db0af02f01491
     home: https://github.com/vmware-tanzu/velero
@@ -1046,7 +1071,7 @@ entries:
     version: 2.31.0
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2026-01-12T11:55:15.040508+02:00"
+    created: "2026-01-12T17:25:16.217777+02:00"
     description: A Helm chart for velero
     digest: 1a78d6e1fb532d7adb6f63891d88799181b92c1c4430dfc887baa91b6e626465
     home: https://github.com/vmware-tanzu/velero
@@ -1069,7 +1094,7 @@ entries:
     version: 2.30.2
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2026-01-12T11:55:15.039121+02:00"
+    created: "2026-01-12T17:25:16.215185+02:00"
     description: A Helm chart for velero
     digest: cdf0961ecf5faa7ff2004ecd6c7691edf74eb63aee55b340fb01613d4e47f79a
     home: https://github.com/vmware-tanzu/velero
@@ -1092,7 +1117,7 @@ entries:
     version: 2.30.1
   - apiVersion: v2
     appVersion: 1.8.1
-    created: "2026-01-12T11:55:15.037751+02:00"
+    created: "2026-01-12T17:25:16.212691+02:00"
     description: A Helm chart for velero
     digest: 28ecca497958a799323f62738e536c4e6feb92f225d13f24b3676e1da0f81f7f
     home: https://github.com/vmware-tanzu/velero
@@ -1113,4 +1138,4 @@ entries:
     urls:
     - https://mtp-devops.github.io/3d-party-helm/velero-2.30.0.tgz
     version: 2.30.0
-generated: "2026-01-12T11:55:14.984664+02:00"
+generated: "2026-01-12T17:25:16.144582+02:00"
