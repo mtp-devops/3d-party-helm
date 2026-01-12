@@ -48,13 +48,13 @@ spec:
               properties:
                 version:
                   type: string
-                  description: "The Kafka Connect version. Defaults to {DefaultKafkaVersion}. Consult the user documentation to understand the process required to upgrade or downgrade the version."
+                  description: The Kafka Connect version. Defaults to the latest version. Consult the user documentation to understand the process required to upgrade or downgrade the version.
                 replicas:
                   type: integer
-                  description: The number of pods in the Kafka Connect group.
+                  description: The number of pods in the Kafka Connect group. Defaults to `3`.
                 image:
                   type: string
-                  description: The docker image for the pods.
+                  description: "The container image used for Kafka Connect pods. If no image name is explicitly specified, it is determined based on the `spec.version` configuration. The image names are specifically mapped to corresponding versions in the Cluster Operator configuration."
                 bootstrapServers:
                   type: string
                   description: Bootstrap servers to connect to. This should be given as a comma separated list of _<hostname>_:_<port>_ pairs.
@@ -141,6 +141,15 @@ spec:
                     enableMetrics:
                       type: boolean
                       description: Enable or disable OAuth metrics. Default value is `false`.
+                    httpRetries:
+                      type: integer
+                      description: "The maximum number of retries to attempt if an initial HTTP request fails. If not set, the default is to not attempt any retries."
+                    httpRetryPauseMs:
+                      type: integer
+                      description: "The pause to take before retrying a failed HTTP request. If not set, the default is to not pause at all but to immediately repeat a request."
+                    includeAcceptHeader:
+                      type: boolean
+                      description: Whether the Accept header should be set in requests to the authorization servers. The default value is `true`.
                     maxTokenExpirySeconds:
                       type: integer
                       description: Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens.
@@ -216,6 +225,13 @@ spec:
                 resources:
                   type: object
                   properties:
+                    claims:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
                     limits:
                       x-kubernetes-preserve-unknown-fields: true
                       type: object
@@ -356,7 +372,7 @@ spec:
                     topologyKey:
                       type: string
                       example: topology.kubernetes.io/zone
-                      description: "A key that matches labels assigned to the Kubernetes cluster nodes. The value of the label is used to set a broker's `broker.rack` config, and the `client.rack` config for Kafka Connect or MirrorMaker 2.0."
+                      description: "A key that matches labels assigned to the Kubernetes cluster nodes. The value of the label is used to set a broker's `broker.rack` config, and the `client.rack` config for Kafka Connect or MirrorMaker 2."
                   required:
                     - topologyKey
                   description: Configuration of the node label which will be used as the `client.rack` consumer configuration.
@@ -368,7 +384,7 @@ spec:
                       enum:
                         - jaeger
                         - opentelemetry
-                      description: Type of the tracing used. Currently the only supported types are `jaeger` for OpenTracing (Jaeger) tracing and `opentelemetry` for OpenTelemetry tracing. The OpenTracing (Jaeger) tracing is deprecated.
+                      description: "Type of the tracing used. Currently the only supported type is `opentelemetry` for OpenTelemetry tracing. As of Strimzi 0.37.0, `jaeger` type is not supported anymore and this option is ignored."
                   required:
                     - type
                   description: The configuration of tracing in Kafka Connect.
@@ -384,19 +400,35 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                         deploymentStrategy:
                           type: string
                           enum:
                             - RollingUpdate
                             - Recreate
-                          description: DeploymentStrategy which will be used for this Deployment. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`.
+                          description: Pod replacement strategy for deployment configuration changes. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`.
                       description: Template for Kafka Connect `Deployment`.
+                    podSet:
+                      type: object
+                      properties:
+                        metadata:
+                          type: object
+                          properties:
+                            labels:
+                              x-kubernetes-preserve-unknown-fields: true
+                              type: object
+                              description: Labels added to the Kubernetes resource.
+                            annotations:
+                              x-kubernetes-preserve-unknown-fields: true
+                              type: object
+                              description: Annotations added to the Kubernetes resource.
+                          description: Metadata applied to the resource.
+                      description: Template for Kafka Connect `StrimziPodSet` resource.
                     pod:
                       type: object
                       properties:
@@ -406,11 +438,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                         imagePullSecrets:
                           type: array
@@ -787,7 +819,7 @@ spec:
                           description: The pod's tolerations.
                         priorityClassName:
                           type: string
-                          description: "The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}."
+                          description: 'The name of the priority class used to assign priority to the pods. '
                         schedulerName:
                           type: string
                           description: "The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used."
@@ -861,11 +893,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                         ipFamilyPolicy:
                           type: string
@@ -873,7 +905,7 @@ spec:
                             - SingleStack
                             - PreferDualStack
                             - RequireDualStack
-                          description: "Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type. Available on Kubernetes 1.20 and newer."
+                          description: "Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type."
                         ipFamilies:
                           type: array
                           items:
@@ -881,8 +913,39 @@ spec:
                             enum:
                               - IPv4
                               - IPv6
-                          description: "Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer."
+                          description: "Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6`. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting."
                       description: Template for Kafka Connect API `Service`.
+                    headlessService:
+                      type: object
+                      properties:
+                        metadata:
+                          type: object
+                          properties:
+                            labels:
+                              x-kubernetes-preserve-unknown-fields: true
+                              type: object
+                              description: Labels added to the Kubernetes resource.
+                            annotations:
+                              x-kubernetes-preserve-unknown-fields: true
+                              type: object
+                              description: Annotations added to the Kubernetes resource.
+                          description: Metadata applied to the resource.
+                        ipFamilyPolicy:
+                          type: string
+                          enum:
+                            - SingleStack
+                            - PreferDualStack
+                            - RequireDualStack
+                          description: "Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type."
+                        ipFamilies:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - IPv4
+                              - IPv6
+                          description: "Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6`. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting."
+                      description: Template for Kafka Connect headless `Service`.
                     connectContainer:
                       type: object
                       properties:
@@ -1040,11 +1103,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata to apply to the `PodDisruptionBudgetTemplate` resource.
                         maxUnavailable:
                           type: integer
@@ -1060,11 +1123,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                       description: Template for the Kafka Connect service account.
                     clusterRoleBinding:
@@ -1076,11 +1139,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                       description: Template for the Kafka Connect ClusterRoleBinding.
                     buildPod:
@@ -1092,11 +1155,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                         imagePullSecrets:
                           type: array
@@ -1473,7 +1536,7 @@ spec:
                           description: The pod's tolerations.
                         priorityClassName:
                           type: string
-                          description: "The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}."
+                          description: 'The name of the priority class used to assign priority to the pods. '
                         schedulerName:
                           type: string
                           description: "The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used."
@@ -1621,11 +1684,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata to apply to the `PodDisruptionBudgetTemplate` resource.
                         pullSecret:
                           type: string
@@ -1640,11 +1703,11 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                       description: Template for the Kafka Connect Build service account.
                     jmxSecret:
@@ -1656,14 +1719,14 @@ spec:
                             labels:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Labels added to the Kubernetes resource.
                             annotations:
                               x-kubernetes-preserve-unknown-fields: true
                               type: object
-                              description: "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+                              description: Annotations added to the Kubernetes resource.
                           description: Metadata applied to the resource.
                       description: Template for Secret of the Kafka Connect Cluster JMX authentication.
-                  description: "Template for Kafka Connect and Kafka Mirror Maker 2 resources. The template allows users to specify how the `Deployment`, `Pods` and `Service` are generated."
+                  description: "Template for Kafka Connect and Kafka Mirror Maker 2 resources. The template allows users to specify how the `Pods`, `Service`, and other services are generated."
                 externalConfiguration:
                   type: object
                   properties:
@@ -1787,6 +1850,13 @@ spec:
                     resources:
                       type: object
                       properties:
+                        claims:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
                         limits:
                           x-kubernetes-preserve-unknown-fields: true
                           type: object
@@ -1874,7 +1944,7 @@ spec:
                             optional:
                               type: boolean
                           description: Reference to the key in the ConfigMap containing the configuration.
-                      description: "ConfigMap entry where the Prometheus JMX Exporter configuration is stored. For details of the structure of this configuration, see the {JMXExporter}."
+                      description: 'ConfigMap entry where the Prometheus JMX Exporter configuration is stored. '
                   required:
                     - type
                     - valueFrom

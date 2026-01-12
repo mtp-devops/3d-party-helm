@@ -10,7 +10,7 @@ watchAnyNamespace: false
 
 defaultImageRegistry: quay.io
 defaultImageRepository: strimzi
-defaultImageTag: 0.32.0
+defaultImageTag: 0.39.0
 
 image:
   registry: ""
